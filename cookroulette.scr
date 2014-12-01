@@ -1,0 +1,8 @@
+export TWILIO_ACCOUNT_SID="your_twilio_account_id_here"
+export TWILIO_AUTH_TOKEN="your_twilio_auth_token"
+export TWILIO_NUMBER="+3335551212"
+export YUMMLY_APP_ID="your_yummly_app_id"
+export YUMMLY_APP_KEY="your_yummly_api_key"
+export SQLITEDB="sqlite:///cookroulette.db"
+
+python cookroulette.py
