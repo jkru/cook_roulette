@@ -1,4 +1,5 @@
-import random, config_db
+import random
+import config_db
 
 class RecipeMachine(object):
     #class that creates the meals

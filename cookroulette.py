@@ -1,10 +1,14 @@
 from flask import Flask, request, render_template
 from flask import redirect, url_for, flash, session, jsonify
-from twilio.rest import TwilioRestClient
-import twilio.twiml, os
-import model, json, requests
 from recipemachine import RecipeMachine
 from passlib.hash import sha256_crypt
+from twilio.rest import TwilioRestClient
+import twilio.twiml
+import os
+import model
+import json
+import requests
+
 
 
 app = Flask(__name__)
