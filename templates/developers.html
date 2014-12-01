@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block head %}
+<style>
+  .ws {
+  color: #EEEEEE;  
+  }
+
+  .json {
+  background-color: #EEEEEE; 
+  padding-left: 10px;
+  width: 200px;
+  }
+
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="col-sm-1"></div>
+<div class="col-sm-11">
+<h1 class="comfortaa">For Developers</h1>
+<div class="playfair">
+  <div>
+    Cook Roulette provides an outward-facing, REST-ful API for
+    developers interested in implementing random meals into their
+    code. The API is available here:
+    <br>
+    <br>
+    <a href="http://localhost:5000/api">http://localhost:5000/api</a>
+  </div>
+  <br>
+  <div>
+   There are no limits on API calls. Each call returns a JSON object that is of the form:
+   <br>
+   <br>
+   <div class="json">
+   <div>{"meal": { </div>
+   <div><span class="ws">----</span>     "vegetable": "tomato", </div>
+   <div><span class="ws">----</span>     "protein": "bacon", </div>
+   <div><span class="ws">----</span>     "starch": "macaroni" </div>
+   <div><span class="ws">----</span>     } </div>
+   <div>} </div></div>
+   <br>
+    where each "meal" skeleton consists of a vegetable, protein, and starch and the ingredients are randomly populated from k-means clustered ingredients. 
+   </div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,156 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<script src="/static/js/jquery-1.11.0.min.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+
+<style>
+
+  a:link {
+      color: #F68833;
+  }
+
+  #starb {
+      position: absolute;
+      margin-top: 20px;
+  }
+
+  .resize {
+      width: 400px;
+      height: 300px;
+      overflow: hidden;
+  }
+
+	body {
+		background-color: #EEEEEE;
+	}
+
+	#putcolor{
+		background-color: #FF7619;
+	}
+
+	#settings{
+		width:175px;
+	}
+
+
+</style>
+{% endblock %}
+
+{% block body %}
+<div  class="col-sm-7">
+  <div class="col-sm-6">
+    <div class="comfortaa"><h1>Ingredients</h1>
+    </div>
+  </div>
+  {% if "logged_in" in session %}
+  <div class="col-sm-6">
+ <form action = "/saveme">
+<div class="col-sm-2" id="nexttostar"></div>
+<div class="col-sm-10">
+      <button id="starb" class="btn btn-default btn-lg">
+      <span class="glyphicon glyphicon-star" aria-hidden="true">
+      </span>
+      </button>
+   </form>
+
+<script>
+var playfair="playfair"
+$( "#starb" ).hover(
+   function() {
+      $( "#nexttostar" ).html("<div class="+playfair+">Save this Recipe</div>")
+   }, function() {
+      $( "#nexttostar" ).html("")
+   });
+</script>
+
+ </div></div>
+{% endif %}
+
+<div class="col-sm-12"> 
+  <div class="playfair"><div class="something"> <img width="50px" src="/static/img/veg.png"> <div class="something" id="vegetable"> {{vegetable}} </div></div></div>
+  <br>
+  <div class="playfair"><div class="something"> <img width="50px" src="/static/img/protein.png"> <div class="something" id="protein">{{protein}}   </div></div></div>
+  <br>								            
+  <div class="playfair"><div class="something"> <img width="50px" src="/static/img/starch.png"> <div class="something" id="starch">{{starch}}    </div></div></div>
+</div>
+
+<div class="col-sm-2">
+<br>
+<br>
+  <form><button class="btn btn-default" id="morefoodbutton"> <span class="comfortaa"><font size="2" color="black">MORE FOOD</font></span></button></div> 
+
+<div class="col-sm-4"><div class="form-group">
+<br>
+<br>
+    <select id="settings" name="settings" class="form-control">
+    <option value="kmeans">k-means clustering</option>
+    <option value="markov">Markov chain</option>
+    <option value="random">random</option>
+    </select>
+</div></div>
+ <div class="col-sm-3">
+<br>
+<br>
+   <div class="moveup" class="checkbox">
+   <label>
+     <input type="checkbox" name="yummlycheck" id="yummlycheck" value="ON" checked="no"><img src="static/img/Yummly_logo_coloured.png">
+   </label>
+   </div>
+ </div> 
+  </form>
+<div class="col-sm-3"></div></div> </div>
+
+
+<div class="col-sm-5">
+<span id="headtoyummly"><a href="http://www.yummly.com/recipe/{{end_of_url}}"><h3 id="linktoyummly" class="comfortaa">{{recipe_name}}</h3></a></span>
+<div class="resize" id="yummlyimage"><img src="{{yummly_image_url}}" class="img-responsive"></div>
+<br>
+
+<div class="playfair"></div></div></div><!-- /.container -->
+
+<script>
+$("#morefoodbutton").click(function(event){
+    event.preventDefault();
+    
+    var settings=$("#settings").val();
+    var yummlycheck=$("#yummlycheck").val();
+    if ($("#yummlycheck").is(":checked")){
+        var checked="yes";
+    }
+    else {
+        var checked="no";
+    };
+
+    $.get(
+        "/nextmeal",
+        {'settings':settings, 'checked':checked},
+        function response(data){
+            $("#vegetable").html(data['vegetable']);
+            $("#protein").html(data['protein']);
+            $("#starch").html(data['starch']);
+
+            if (checked==="yes") {
+                var yummlyLink = '"http://www.yummly.com/recipe/'+data['end_of_url']+'"';
+                var yummlyImageUrl = data['yummly_image_url'];
+                $("#headtoyummly").html('<a href='+yummlyLink+'><h3 id="linkToYummly" class="comfortaa">'+data['recipe_name']+'</h3></a>');
+                if (yummlyImageUrl!=""){
+                     $("#yummlyimage").html('<img src='+yummlyImageUrl+' class="img-responsive">');
+                     }
+                ;}
+
+            else {
+                var yummlyLink = '"http://www.yummly.com/recipe/'+data['end_of_url']+'"';
+                var yummlyImageUrl = data['yummly_image_url'];
+                $("#headtoyummly").html("");
+                $("#yummlyimage").html("");
+            };
+
+
+
+   });
+})
+</script>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="/static/dist/js/bootstrap.min.js"></script>
+<style>
+body {
+    background: url("/static/img/cronut.jpg");
+    background-size: 1408px 933px;
+    background-repeat: no-repeat;
+
+
+}
+</style>
+
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+      <div class="comfortaa"><h2>Log in form</h2></div>
+      <div class="col-sm-4">
+      <form role="form" method='POST'>
+        <div class="form-group">
+          <label for="email" class="playfair">Email:</label>
+          <input type="email" class="form-control" name="email" id="email" placeholder="Enter email"></div>
+        <div class="form-group">
+          <label for="pwd" class="playfair">Password:</label>
+          <input type="password" class="form-control" name="password" id="pwd" placeholder="Enter password">
+        </div>
+        <button type="submit" class="btn btn-default"><span class="comfortaa"><font size="3">Submit</font></span></button>
+      </form>
+      <div class="playfair">New user? <a href="/create">Create an account!</a> </div>
+</div>
+
+{% endblock %}
+
+

@@ -1,0 +1,34 @@
+body {
+
+}
+
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+.comfortaa {
+  font-family: 'Comfortaa', cursive;
+  font-size: 30px;
+}
+.playfair{
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+}
+.navbar-static-top {
+z-index: 200;
+border-width: 0 0 1px;
+}
+
+#CRtitle{
+  font-size: 100px;
+}
+
+.something {
+    display: inline-block;
+    padding-left: 10px;
+}
+
+.moveup {
+    padding-bottom: 10px;
+}

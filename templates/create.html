@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<style>body{background: url("/static/img/muffins.jpg");
+background-size: 1408px 933px;
+background-repeat: no-repeat;
+}
+.o-roulette {
+  width: 25px;
+  }
+</style>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+
+
+{% endblock %}
+
+{% block body %}
+<div class="col-sm-3">
+<h3 class="comfortaa"><font color="white"> Create an Account</font></h3>
+<div><form class="sign-up-form" method="POST">
+    <div class="form-group"><label for="email"></label>
+      <input type = "text" name ="email" id="first_name" class="form-control" placeholder="Email" /></div>
+    <div class="form-group"><label for="password"></label>
+	<input type = "password" name="password" id="password" class="form-control" placeholder="Password"/></div>
+    <label for="settings" class="playfair"> <font color="white">Statistical Settings</font> </label>
+    <select name = "settings" class="form-control">
+    <option value = "kmeans"><span class="playfair">k-means clustering</span></option>
+    <option value = "random"><span class="playfair">random</span></option>
+    </select>
+<br>
+<form action = "/create"><button type="submit" class="btn btn-default"> <span class="comfortaa"><font size="3">Create</font></span> </button></form>
+</div>
+</div><div class="col-sm-9"></div>
+<!-- /.container -->
+
+
+{% endblock %}

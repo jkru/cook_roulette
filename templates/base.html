@@ -1,0 +1,64 @@
+<html>
+    <head>
+<link rel="shortcut icon" href="favicon.ico">
+<link href='http://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
+      <link href='http://fonts.googleapis.com/css?family=Comfortaa:400,700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:400,700italic' rel='stylesheet' type='text/css'>
+	<link href="/static/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/static/css/starter-template.css" rel="stylesheet">
+
+        <div class="navbar navbar-inverse navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <img src=""><a class="navbar-brand" href="/"><div class="comfortaa">Cook Roulette</div></a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                            <li class="playfair"> <a href="/">Home</a></li>
+                            <li class="playfair"> <a href="/developers">Developers</a></li>
+                            {% if "logged_in" in session %}
+                                <li class="playfair"> <a href="/account">Account</a></li> 
+                                <li class="playfair"> <a href="/logout">Log Out</a></li> 
+
+                            {% else %}
+                                <li class="playfair" id="login"><a href="/login">Log In</a></li>
+                            {% endif %}
+
+<!--<script>
+$( "#login" ).click(function(event){
+    event.preventDefault();
+    var playfair="playfair";
+    $( "#login" ).html("<div class="+playfair+">Save this Recipe</div>");
+  });
+</script>-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+	
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class="flashes"><div class="col-sm-5">
+                {% for message in messages %}
+                    <div class="alert alert-info" role="alert"><div class="playfair">{{ message }}</div></div></div>
+                {% endfor %}
+                </ul>
+		<div><br><br><br><br></div>
+            {% endif %}
+        {% endwith %}
+        {% block head %}
+        {% endblock %}
+    
+    </head>
+    <body>
+
+
+
+        {% block body %}
+        {% endblock %}
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="/static/dist/js/bootstrap.min.js"></script>
+
+    </body>
+</html>

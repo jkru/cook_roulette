@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block head %}
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="/static/dist/js/bootstrap.min.js"></script>
+
+
+<style>
+  body{
+      background: url("/static/img/Food-Hero-sfw.jpg");
+      background-size:  1315px 684px;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+  }
+
+  .comfortaaa {
+      font-family: 'Comfortaa', cursive;
+      font-size: 40px;
+      color: #fff;
+  }
+
+  .playfaira{
+       font-family: 'Playfair Display', serif;
+       font-size: 20px;
+        color: #fff;
+  }
+
+</style>
+
+
+
+{% endblock %}
+
+{% block body %}
+
+<div class="col-sm-2"></div>
+
+<div class="col-sm-8">
+  <h3 class="comfortaaa">My Saved Meals</h3>
+<!--<button class="btn btn-default" id="hr">Human Readable</button>-->
+
+  {% for recipe in recipes %}
+     <div class="playfaira" id="savedmeals">{{recipe.recipe}}</div>
+  {% endfor %}
+</div>
+
+<div class="col-sm-2"></div>
+
+
+
+<script>
+<!--for element in document.getElementsByClassName() attach a click envent for every single one-->
+
+<!--$("#hr").click(function(event){
+    event.preventDefault();
+    var savedMeals = $("#json_recipes").data(this)
+    for (i=0; i<savedMeals.length;i++) {
+        console.log(savedMeals)        
+        }
+
+})-->
+
+</script>
+
+{% endblock %}
