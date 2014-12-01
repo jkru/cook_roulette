@@ -166,7 +166,11 @@ def next_random_meal():
     recipe_method=recipe_method
     if request.args.get("checked") == "yes":
         try:
-            yummly_api_request = requests.get('http://api.yummly.com/v1/api/recipes?_app_id='+YUMMLY_APP_ID+'&_app_key='+YUMMLY_APP_KEY+'&q='+str(ingredients['vegetable'])+'%2C+'+str(ingredients['protein'])+'%2C+'+str(ingredients['starch'])+'&requirePictures=true')
+            yummly_api_request = requests.get('http://api.yummly.com/v1/api/recipes?_app_id='
+                                              +YUMMLY_APP_ID+'&_app_key='
+                                              +YUMMLY_APP_KEY+'&q='+str(ingredients['vegetable'])
+                                              +'%2C+'+str(ingredients['protein'])+'%2C+'
+                                              +str(ingredients['starch'])+'&requirePictures=true')
             json_text = yummly_api_request.text
             json_object = json.loads(json_text)
             try:
