@@ -212,7 +212,7 @@ After you download the code, installation is straightforward.
 
         pip install -r requirements.txt
 
-And now you're ready to run! The code is run with a shell script::
+4. And now you're ready to run! The code is run with a shell script::
 
      ./cookroulette.scr
 
