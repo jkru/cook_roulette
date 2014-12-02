@@ -17,9 +17,13 @@ from [Y.-Y. Ahn et
 al.](http://www.scientificamerican.com/article/flavor-connection-taste-map-interactive/)
 for this project. Ingredients can be associated with each other in a variety of
 ways and for Cook Roulette, I examined these in three ways:
-
 1. k-means clustering
+2. Markov chains
+3. Randomness
 
+
+ k-means clustering
+----
 Machine learning (ML) is an excellent way to learn information from a
 dataset and comes in two flavors: supervised and unsupervised. One of
 the most common unsupervised ML algorithms is k-means clustering. 
@@ -45,14 +49,21 @@ k-means meals are created by randomly selecting a cluster and then
 populating a meal skeleton (i.e., something that has a vetetable,
 protein, and starch) with the ingredients of that cluster.
 
-2. Markov chains 
+Markov chains 
+---- 
 
 Markov chains are constructed by the probability of
 an event occurring at a given state. Given a particular state, when
 event a occurs, what are the probabilities associated with that event
-of what might happen next?
+of what might happen next? In the case of the scraped recipe, I created a database with 
 
-3. Complete randomness
+Randomness 
+---- 
+
+For random meals, the ingredients are populated by a randomly selected
+ingredient that fulfills each ingredient type of the meal
+skeleton. The select function from the random module is used to select
+each ingredient.
 
 
 Web App Features
@@ -101,3 +112,14 @@ Extras
 
 2. Outward facing REST-ful API that provides a json object with a generated k-means meal
 
+Technology stack
+----
+1. Python
+2. Python Flask
+3. SQLAlchemy
+4. Sqlite
+5. Yummly API
+6. JQuery/Javascript
+7. Twilio API
+8. Jinja2
+9. HTML/CSS/Bootstrap
