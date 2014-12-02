@@ -10,14 +10,19 @@ The premise
 
 Let's look at meal generation from a data-driven perspective. Websites
 such as allrecipes.com and foodnetwork.com have an incredible amount
-of recipe content. A recipe is really a list of ingredients with
-associated amounts and instructions. For this project, I considered a
-recipe to be a set of ingredients. 
+of recipe content. I scraped and cleaned recipes from a variety of
+websites, and used publicly-availble data from [Y.-Y. Ahn et
+al.](http://www.scientificamerican.com/article/flavor-connection-taste-map-interactive/).
 
-Ingredients can be associated with each other in a variety of
-ways. For Cook Roulette, I examined them in three ways:
+
+A recipe is really a list of ingredients with associated amounts and
+instructions. For this project, I considered a recipe to be a set of
+ingredients. These can be associated with each other in a variety of
+ways and for Cook Roulette, I examined the ingredients in three ways:
 
 1. k-means clustering
+
+
 2. Markov chains
 3. Complete randomness
 
