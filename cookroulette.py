@@ -134,9 +134,6 @@ def random_meal():
     recipe_maker = RecipeMachine()
     recipe_method = session.get('default_setting', "random")
 
-    #look at switch cases
-
-
     methods = {"kmeans":recipe_maker.generate_kmeans_recipe,
                "markov":recipe_maker.generate_markov_recipe,
                "random":recipe_maker.generate_random_recipe}

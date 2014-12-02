@@ -5,11 +5,22 @@ Cook Roulette: Data-driven meals
 
 Cook Roulette is a random meal generator that creates combinations of food so you don't have to think about what you should make for dinner.
 ####Table of Contents
-- [The Premise](#the-premise-)
-- [k-means Clustering](#k-means-clustering)
-- [Markov Chains](#markov-chains-)
-- [Randomness](#randomness-)
+- [The Premise](#the-premise)
+  - [k-means Clustering](#k-means-clustering)
+  - [Markov Chains](#markov-chains)
+  - [Randomness](#randomness)
 - [Web App Features](#web-app-features)
+- [Let's cook: User Experience](#)
+  - [Running Cook Roulette](#)
+  - [Landing Page](#)
+  - [Log in Page](#)
+  - [Create Account Page](#)
+  - [Meal Generation](#)
+  - [Account Page](#)
+- [Testing](#)
+- [Extras](#)
+  - [Twilio Texts](#)
+  - [Cook Roulette API](#)
 
 ##The Premise 
 
@@ -24,13 +35,7 @@ for this project. Ingredients can be associated with each other in a variety of
 ways and for Cook Roulette, I examined these in three ways:
 
 
-1. k-means clustering
-2. Markov chains
-3. Randomness
-
-
-###k-means Clustering
-
+###1. k-means clustering
 Machine learning (ML) is an excellent way to learn information from a
 dataset and comes in two flavors: supervised and unsupervised. One of
 the most common unsupervised ML algorithms is k-means clustering. 
@@ -56,7 +61,7 @@ k-means meals are created by randomly selecting a cluster and then
 populating a meal skeleton (i.e., something that has a vetetable,
 protein, and starch) with the ingredients of that cluster.
 
-###Markov Chains 
+###2. Markov Chains
 
 Markov chains are constructed by the probability of an event occurring
 at a given state. Given a particular state, when event a occurs, what
@@ -71,7 +76,7 @@ ingredients. This continues until the meal skeleton is populated with
 an ingredient of every type. These meals are more random than the
 k-means meals.
 
-###Randomness 
+###3. Randomness
 
 For random meals, the ingredients are populated by a randomly selected
 ingredient that fulfills each ingredient type of the meal
@@ -80,16 +85,14 @@ each ingredient. As one would expect, these meals are the most random.
 
 ##Web App Features
 
-###1. Log in functionality
-###2. Save meals
-###3. Select type of meal generation (k-means, Markov chain, or random)
-###4. Uses Yummly API to find a recipe that uses those meal ingredients
+1. Log in functionality
+2. Save meals
+3. Select type of meal generation (k-means, Markov chain, or random)
+4. Uses Yummly API to find a recipe that uses those meal ingredients
 
 
-##Let's cook!
-
-Cook Roulette randomly generates meal skeletons.
-
+##Let's cook: User Experience
+### Running Cook Roulette
 The code is run with a shell script::
 
      ./cookroulette.scr
@@ -99,26 +102,37 @@ order to achieve full functionality of the site. These are omitted in
 this repository, but instructions for setting up both are included at
 the end.
 
-
-##User Experience
-
-The landing page is for Cook Roulette is here:
+###Landing Page
+The landing page for Cook Roulette allows for the user to enter the site and get a randomly generated meal or log into the website.
 ![landing page]
 (https://raw.githubusercontent.com/jkru/cook_roulette/master/static/img/readme_img/homepage.png)
 
-Users can create an account:
-![create page]
-(https://raw.githubusercontent.com/jkru/cook_roulette/master/static/img/readme_img/create_account.png)
+###Log in Page 
 
-And then log into the page:
+The log in page allows existing users to log in with email and a
+password or new users to enter the create account page. The user
+information is stored in a SQLite database. Passwords are salted and
+hashed for security.
+
 ![login page]
 (https://raw.githubusercontent.com/jkru/cook_roulette/master/static/img/readme_img/login.png)
 
-The heart of the app lives here:
+###Create Account Page
+
+New users can create an account here, as accessed by the log in
+page. Users can choose the type of ingredient association they prefer, 
+
+![create page]
+(https://raw.githubusercontent.com/jkru/cook_roulette/master/static/img/readme_img/create_account.png)
+
+
+###Meal Generation
+The heart of the app lives on this page, which displays the randomly generated meal. 
 ![main page]
 (https://raw.githubusercontent.com/jkru/cook_roulette/master/static/img/readme_img/main_part.png)
 
-Users can click on the button to generate more meals and select options to choose the type of meal that is generated and to enable a call the to Yummly API, which will return an image and a recipe based on a search of the generated ingredients:
+Users can click on the button to generate more meals. These subsequent meals are displayed via a JQuery/AJAX call. The user can also select options to choose the type of meal that is generated and to enable a call the to Yummly API, which will return an image and a recipe based on a search of the generated ingredients:
+
 ![more meals]
 (https://raw.githubusercontent.com/jkru/cook_roulette/master/static/img/readme_img/select_recipe.png)
 
@@ -126,21 +140,44 @@ If logged in, users can also save a meal that they like.
 ![saved]
 (https://raw.githubusercontent.com/jkru/cook_roulette/master/static/img/readme_img/savebutton.png)
 
-These saved recipes along with account information can be access through the account page:
+###Account Page
+These saved recipes, along with account information, can be accessed through the account page:
 ![account page]
 (https://raw.githubusercontent.com/jkru/cook_roulette/master/static/img/readme_img/account_page.png)
 
-Testing
---------
+##Testing 
+
+Unit tests were written for 20 functions in the code, spanning the
+cookroulette, config_db, and model modules. These tests were written
+using the unittest python library.
+
+To run the set of tests, simply run the run_tests script
+
+   ./run_tests.scr
+
+![unit tests]
+(https://raw.githubusercontent.com/jkru/cook_roulette/master/static/img/readme_img/runtest.png)
 
 
-Extras
------------------------
-1. Text to twilio for a k-means generated meal
 
-2.  Cook Roulette provides an outward-facing, REST-ful API for
-    developers interested in implementing random meals into their
-    code. The API is available at localhost:5000/api. There are no limits on API calls. Each call returns a JSON object that is of the form:
+##Extras
+
+###Twilio Texts I used the Twilio API to connect Cook Roulette to
+mobile world via SMS. Users can text an SMS-optimized Twilio number
+and get a k-means generated meal texted back. This feature widely
+believed to be best used in the wild at grocery stores.
+
+![Mobile Screenshot]
+(https://raw.githubusercontent.com/jkru/cook_roulette/master/static/img/readme_img/twilio.png)
+
+
+### Cook Roulette API
+
+Cook Roulette provides an outward-facing, REST-ful API for developers
+interested in implementing random meals into their code. The API
+is available at localhost:5000/api. There are no limits on API
+calls. Each call returns a JSON object that is of the form:
+
 
    {"meal": { 
         "vegetable": "tomato", 

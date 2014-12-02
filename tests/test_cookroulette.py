@@ -6,6 +6,7 @@ class FlaskTestCase(unittest.TestCase):
     def setUp(self):
         self.app= cookroulette.app.test_client()
 
+    #these test that pages are displayed
     def testHomePage(self):
         response = self.app.get("/")
         self.assertIn("Roulette", response.data)
@@ -16,8 +17,11 @@ class FlaskTestCase(unittest.TestCase):
 
     def testLogin(self):
         response = self.app.get("/login")
-        self.assertIn("Statistical", response.data)
+        self.assertIn("Log in", response.data)
 
+    def testDevelopers(self):
+        response = self.app.get("/developers")
+        self.assertIn("JSON", response.data)
 
 
 if __name__=="__main__":
