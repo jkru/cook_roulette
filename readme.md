@@ -220,7 +220,7 @@ This script would nominally hold API keys for twilio and yummly in
 order to achieve full functionality of the site. These are omitted in
 this repository. The API keys can be acquired at
 [www.twilio.com](http://www.twilio.com) and
-[developers.yummly.com](http://developers.yummly.com) and then inserted into
+[developer.yummly.com](http://developer.yummly.com) and then inserted into
 the cookroulette.scr script as environment variables that are then
 called in the server code.
 
