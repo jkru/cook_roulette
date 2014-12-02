@@ -91,11 +91,15 @@ After you download the code, installation is straightforward.
 
         virtualenvironment env
 
+
 2. Activate the virtual environment::
-   	source env/bin/activate
+
+        source env/bin/activate
+
 
 3. Install the requirements::
-   	pip install -r requirements.txt
+
+        pip install -r requirements.txt
 
 And now you're ready to run!
 
