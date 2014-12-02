@@ -17,6 +17,8 @@ from [Y.-Y. Ahn et
 al.](http://www.scientificamerican.com/article/flavor-connection-taste-map-interactive/)
 for this project. Ingredients can be associated with each other in a variety of
 ways and for Cook Roulette, I examined these in three ways:
+
+
 1. k-means clustering
 2. Markov chains
 3. Randomness
@@ -52,10 +54,18 @@ protein, and starch) with the ingredients of that cluster.
 Markov chains 
 ---- 
 
-Markov chains are constructed by the probability of
-an event occurring at a given state. Given a particular state, when
-event a occurs, what are the probabilities associated with that event
-of what might happen next? In the case of the scraped recipe, I created a database with 
+Markov chains are constructed by the probability of an event occurring
+at a given state. Given a particular state, when event a occurs, what
+are the probabilities associated with that event of what might happen
+next? For Cook Roulette, I created a dictionary that associates each
+ingredient of every scraped recipe with every other ingredient that it
+shares a recipe with.
+
+The meal skeleton is then populated by randomly selecting an
+ingredient and then selecting the next ingredient from the associated
+ingredients. This continues until the meal skeleton is populated with
+an ingredient of every type. These meals are more random than the
+k-means meals.
 
 Randomness 
 ---- 
@@ -63,8 +73,7 @@ Randomness
 For random meals, the ingredients are populated by a randomly selected
 ingredient that fulfills each ingredient type of the meal
 skeleton. The select function from the random module is used to select
-each ingredient.
-
+each ingredient. As one would expect, these meals are the most random.
 
 Web App Features
 ----------------------- 
@@ -88,11 +97,12 @@ this repository, but instructions for setting up both are included at
 the end.
 
 
-
-
-
 User Experience
 -----------------------
+The landing page is for Cook Roulette is here:
+![landing page]
+(https://raw.githubusercontent.com/jkru/cook_roulette/master/static/img/readme_img/homepage.png)
+
 Users can create an account:
 ![create page]
 (https://raw.githubusercontent.com/jkru/cook_roulette/master/static/img/readme_img/create_account.png)
@@ -101,10 +111,21 @@ And then log into the page:
 ![login page]
 (https://raw.githubusercontent.com/jkru/cook_roulette/master/static/img/readme_img/login.png)
 
-The main part of the page:
+The heart of the app lives here:
 ![main page]
 (https://raw.githubusercontent.com/jkru/cook_roulette/master/static/img/readme_img/main_part.png)
 
+Users can click on the button to generate more meals and select options to choose the type of meal that is generated and to enable a call the to Yummly API, which will return an image and a recipe based on a search of the generated ingredients:
+![more meals]
+(https://raw.githubusercontent.com/jkru/cook_roulette/master/static/img/readme_img/select_recipe.png)
+
+If logged in, users can also save a meal that they like. 
+![saved]
+(https://raw.githubusercontent.com/jkru/cook_roulette/master/static/img/readme_img/savebutton.png)
+
+These saved recipes along with account information can be access through the account page:
+![account page]
+(https://raw.githubusercontent.com/jkru/cook_roulette/master/static/img/readme_img/account_page.png)
 
 Extras
 -----------------------
