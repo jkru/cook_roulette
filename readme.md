@@ -7,9 +7,11 @@ Cook Roulette is a random meal generator that creates combinations of food so yo
 ####Table of Contents
 - [The Premise](#the-premise-)
 - [k-means Clustering](#k-means-clustering)
+- [Markov Chains](#markov-chains-)
+- [Randomness](#randomness-)
+- [Web App Features](#web-app-features)
 
-The premise 
------ 
+##The Premise 
 
 Let's look at meal generation from a data-driven perspective. A recipe
 is really a list of ingredients with associated amounts and
@@ -27,8 +29,8 @@ ways and for Cook Roulette, I examined these in three ways:
 3. Randomness
 
 
-k-means clustering
-----
+###k-means Clustering
+
 Machine learning (ML) is an excellent way to learn information from a
 dataset and comes in two flavors: supervised and unsupervised. One of
 the most common unsupervised ML algorithms is k-means clustering. 
@@ -54,8 +56,7 @@ k-means meals are created by randomly selecting a cluster and then
 populating a meal skeleton (i.e., something that has a vetetable,
 protein, and starch) with the ingredients of that cluster.
 
-Markov chains 
----- 
+###Markov Chains 
 
 Markov chains are constructed by the probability of an event occurring
 at a given state. Given a particular state, when event a occurs, what
@@ -70,24 +71,23 @@ ingredients. This continues until the meal skeleton is populated with
 an ingredient of every type. These meals are more random than the
 k-means meals.
 
-Randomness 
----- 
+###Randomness 
 
 For random meals, the ingredients are populated by a randomly selected
 ingredient that fulfills each ingredient type of the meal
 skeleton. The select function from the random module is used to select
 each ingredient. As one would expect, these meals are the most random.
 
-Web App Features
------------------------ 
-1. Log in functionality
-2. Save meals
-3. Select type of meal generation (k-means, Markov chain, or random)
-4. Uses Yummly API to find a recipe that uses those meal ingredients
+##Web App Features
+
+###1. Log in functionality
+###2. Save meals
+###3. Select type of meal generation (k-means, Markov chain, or random)
+###4. Uses Yummly API to find a recipe that uses those meal ingredients
 
 
-Let's cook!
--------------
+##Let's cook!
+
 Cook Roulette randomly generates meal skeletons.
 
 The code is run with a shell script::
@@ -100,8 +100,8 @@ this repository, but instructions for setting up both are included at
 the end.
 
 
-User Experience
------------------------
+##User Experience
+
 The landing page is for Cook Roulette is here:
 ![landing page]
 (https://raw.githubusercontent.com/jkru/cook_roulette/master/static/img/readme_img/homepage.png)
