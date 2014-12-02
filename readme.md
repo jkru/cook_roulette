@@ -24,7 +24,7 @@ ways and for Cook Roulette, I examined these in three ways:
 3. Randomness
 
 
- k-means clustering
+k-means clustering
 ----
 Machine learning (ML) is an excellent way to learn information from a
 dataset and comes in two flavors: supervised and unsupervised. One of
