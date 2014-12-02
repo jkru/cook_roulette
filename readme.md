@@ -10,17 +10,19 @@ Cook Roulette is a random meal generator that creates combinations of food so yo
   - [Markov Chains](#markov-chains)
   - [Randomness](#randomness)
 - [Web App Features](#web-app-features)
-- [Let's cook: User Experience](#)
-  - [Running Cook Roulette](#)
-  - [Landing Page](#)
-  - [Log in Page](#)
-  - [Create Account Page](#)
-  - [Meal Generation](#)
-  - [Account Page](#)
-- [Testing](#)
-- [Extras](#)
-  - [Twilio Texts](#)
-  - [Cook Roulette API](#)
+- [Let's cook: User Experience](#lets-cook-user-experience)
+  - [Running Cook Roulette](#running-cook-roulette)
+  - [Landing Page](#landing-page)
+  - [Log in Page](#log-in-page)
+  - [Create Account Page](#create-account-page)
+  - [Meal Generation](#meal-generation)
+  - [Account Page](#account-page)
+- [Testing](#testing)
+- [Extras](#extras)
+  - [Twilio Texts](#twilio-texts)
+  - [Cook Roulette API](#cook-roulette-api)
+- [Technology Stack](#techonology-stack)
+- [Installation](#installation)
 
 ##The Premise 
 
@@ -91,7 +93,7 @@ each ingredient. As one would expect, these meals are the most random.
 4. Uses Yummly API to find a recipe that uses those meal ingredients
 
 
-##Let's cook: User Experience
+##Let's Cook: User Experience
 ### Running Cook Roulette
 The code is run with a shell script::
 
@@ -147,11 +149,11 @@ These saved recipes, along with account information, can be accessed through the
 
 ##Testing 
 
-Unit tests were written for 20 functions in the code, spanning the
-cookroulette, config_db, and model modules. These tests were written
-using the unittest python library.
+Unit tests were written for functions spanning the cookroulette,
+config_db, and model modules. These tests were written using the
+unittest python library.
 
-To run the set of tests, simply run the run_tests script
+To run the set of tests, simply run the run_tests script::
 
    ./run_tests.scr
 
@@ -162,10 +164,12 @@ To run the set of tests, simply run the run_tests script
 
 ##Extras
 
-###Twilio Texts I used the Twilio API to connect Cook Roulette to
-mobile world via SMS. Users can text an SMS-optimized Twilio number
-and get a k-means generated meal texted back. This feature widely
-believed to be best used in the wild at grocery stores.
+###Twilio Texts 
+
+I used the Twilio API to connect Cook Roulette to mobile world via
+SMS. Users can text an SMS-optimized Twilio number and get a k-means
+generated meal texted back. This feature widely believed to be best
+used in the wild at grocery stores.
 
 ![Mobile Screenshot]
 (https://raw.githubusercontent.com/jkru/cook_roulette/master/static/img/readme_img/twilio.png)
@@ -174,8 +178,8 @@ believed to be best used in the wild at grocery stores.
 ### Cook Roulette API
 
 Cook Roulette provides an outward-facing, REST-ful API for developers
-interested in implementing random meals into their code. The API
-is available at localhost:5000/api. There are no limits on API
+interested in implementing random meals into their code. The API is
+available at localhost:5000/api. There are no limits on API
 calls. Each call returns a JSON object that is of the form:
 
 
@@ -190,7 +194,7 @@ calls. Each call returns a JSON object that is of the form:
  starch and the ingredients are randomly populated from k-means
  clustered ingredients.
 
-Technology stack
+Technology Stack
 ----
 1. Python
 2. Python Flask
@@ -202,7 +206,7 @@ Technology stack
 8. Jinja2
 9. HTML/CSS/Bootstrap
 
-To Install
+Installation
 -------
 After you download the code, installation is straightforward.
 
