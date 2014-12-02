@@ -4,6 +4,9 @@ Cook Roulette: Data-driven meals
 (https://raw.githubusercontent.com/jkru/cook_roulette/master/static/img/readme_img/homepage.png)
 
 Cook Roulette is a random meal generator that creates combinations of food so you don't have to think about what you should make for dinner.
+####Table of Contents
+- [The Premise](#the-premise)
+- [k-means Clustering](#kmeans-clustering)
 
 The premise 
 ----- 
@@ -83,26 +86,6 @@ Web App Features
 4. Uses Yummly API to find a recipe that uses those meal ingredients
 
 
-To Install
--------
-After you download the code, installation is straightforward.
-
-1. Create a python virtual environment::
-
-        virtualenvironment env
-
-
-2. Activate the virtual environment::
-
-        source env/bin/activate
-
-
-3. Install the requirements::
-
-        pip install -r requirements.txt
-
-And now you're ready to run!
-
 Let's cook!
 -------------
 Cook Roulette randomly generates meal skeletons.
@@ -147,6 +130,10 @@ These saved recipes along with account information can be access through the acc
 ![account page]
 (https://raw.githubusercontent.com/jkru/cook_roulette/master/static/img/readme_img/account_page.png)
 
+Testing
+--------
+
+
 Extras
 -----------------------
 1. Text to twilio for a k-means generated meal
@@ -177,3 +164,24 @@ Technology stack
 7. Twilio API
 8. Jinja2
 9. HTML/CSS/Bootstrap
+
+To Install
+-------
+After you download the code, installation is straightforward.
+
+1. Create a python virtual environment::
+
+        virtualenv env
+
+
+2. Activate the virtual environment::
+
+        source env/bin/activate
+
+
+3. Install the requirements::
+
+        pip install -r requirements.txt
+
+And now you're ready to run!
+
