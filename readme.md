@@ -8,22 +8,50 @@ Cook Roulette is a random meal generator that creates combinations of food so yo
 The premise 
 ----- 
 
-Let's look at meal generation from a data-driven perspective. Websites
-such as allrecipes.com and foodnetwork.com have an incredible amount
-of recipe content. I scraped and cleaned recipes from a variety of
-websites, and used publicly-availble data from [Y.-Y. Ahn et
-al.](http://www.scientificamerican.com/article/flavor-connection-taste-map-interactive/).
-
-
-A recipe is really a list of ingredients with associated amounts and
-instructions. For this project, I considered a recipe to be a set of
-ingredients. These can be associated with each other in a variety of
-ways and for Cook Roulette, I examined the ingredients in three ways:
+Let's look at meal generation from a data-driven perspective. A recipe
+is really a list of ingredients with associated amounts and
+instructions; however for this project I consider a recipe to simply be a list of ingredients.  Websites such as allrecipes.com and foodnetwork.com
+have an incredible amount of recipe content. I scraped and cleaned
+recipes from a variety of websites, and used publicly-availble data
+from [Y.-Y. Ahn et
+al.](http://www.scientificamerican.com/article/flavor-connection-taste-map-interactive/)
+for this project. Ingredients can be associated with each other in a variety of
+ways and for Cook Roulette, I examined these in three ways:
 
 1. k-means clustering
 
+Machine learning (ML) is an excellent way to learn information from a
+dataset and comes in two flavors: supervised and unsupervised. One of
+the most common unsupervised ML algorithms is k-means clustering. 
 
-2. Markov chains
+The k-means algorithm works by taking a dataset and dividing it into k
+number of clusters. There are, thus, k number of centroids that
+correspond to the center of a given cluster. These centroids are
+initially randomly placed throughout the data set. Each point in the
+dataset is then evaluated to see which centroid it is closest to. It
+is then assigned to belong to the cluster group of the closest
+centroid. Once all points are evaluted, the centroids are moved to
+reflect the center of their individual cluster. Ideally, this process
+is iterated until the cluster membership is stabilized and movement of
+the centroids has ceased.
+
+For Cook Roulette, I implemented k-means clustering on the scraped
+recipes. The distances used to determine cluster membership is the
+Pearson correlation coefficient, which compares the inclusion of
+ingredients (e.g., pizza and pasta both have cheese and tomatoes and
+are likely to be in the same cluster which is distinct from green bean
+casserole and mushroom soup which both have cream and mushrooms). The
+k-means meals are created by randomly selecting a cluster and then
+populating a meal skeleton (i.e., something that has a vetetable,
+protein, and starch) with the ingredients of that cluster.
+
+2. Markov chains 
+
+Markov chains are constructed by the probability of
+an event occurring at a given state. Given a particular state, when
+event a occurs, what are the probabilities associated with that event
+of what might happen next?
+
 3. Complete randomness
 
 
