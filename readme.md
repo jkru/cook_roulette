@@ -1,17 +1,30 @@
 Cook Roulette: Data-driven meals
 =====================
+Cook Roulette is a random meal generator that creates combinations of food so you don't have to think about what you should make for dinner.
+
 ![home page]
 (https://raw.githubusercontent.com/jkru/cook_roulette/master/static/img/readme_img/homepage.png)
 
-Cook Roulette is a random meal generator that creates combinations of food so you don't have to think about what you should make for dinner.
+Technology Stack
+----
+1. Python
+2. Python Flask
+3. SQLAlchemy
+4. Sqlite
+5. Yummly API
+6. JQuery/Javascript
+7. Twilio API
+8. Jinja2
+9. HTML/CSS/Bootstrap
+
 ####Table of Contents
+- [Technology Stack](#techonology-stack)
 - [The Premise](#the-premise)
   - [k-means Clustering](#k-means-clustering)
   - [Markov Chains](#markov-chains)
   - [Randomness](#randomness)
 - [Web App Features](#web-app-features)
 - [Let's cook: User Experience](#lets-cook-user-experience)
-  - [Running Cook Roulette](#running-cook-roulette)
   - [Landing Page](#landing-page)
   - [Log in Page](#log-in-page)
   - [Create Account Page](#create-account-page)
@@ -21,8 +34,8 @@ Cook Roulette is a random meal generator that creates combinations of food so yo
 - [Extras](#extras)
   - [Twilio Texts](#twilio-texts)
   - [Cook Roulette API](#cook-roulette-api)
-- [Technology Stack](#techonology-stack)
 - [Installation](#installation)
+  - [Running Cook Roulette](#running-cook-roulette)
 
 ##The Premise 
 
@@ -94,16 +107,6 @@ each ingredient. As one would expect, these meals are the most random.
 
 
 ##Let's Cook: User Experience
-### Running Cook Roulette
-The code is run with a shell script::
-
-     ./cookroulette.scr
-
-This script would nominally hold API keys for twilio and yummly in
-order to achieve full functionality of the site. These are omitted in
-this repository, but instructions for setting up both are included at
-the end.
-
 ###Landing Page
 The landing page for Cook Roulette allows for the user to enter the site and get a randomly generated meal or log into the website.
 ![landing page]
@@ -155,7 +158,7 @@ unittest python library.
 
 To run the set of tests, simply run the run_tests script::
 
-          ./run_tests.scr
+       ./run_tests.scr
 
 ![unit tests]
 (https://raw.githubusercontent.com/jkru/cook_roulette/master/static/img/readme_img/runtest.png)
@@ -182,29 +185,14 @@ interested in implementing random meals into their code. The API is
 available at localhost:5000/api. There are no limits on API
 calls. Each call returns a JSON object that is of the form:
 
-
-   {"meal": { 
-        "vegetable": "tomato", 
-        "protein": "bacon", 
-        "starch": "macaroni" 
-        } 
-   } 
+````json
+   {"meal": { "vegetable": "tomato", "protein": "bacon", "starch":"macaroni"}}
+````
 
  where each "meal" skeleton consists of a vegetable, protein, and
  starch and the ingredients are randomly populated from k-means
  clustered ingredients.
 
-Technology Stack
-----
-1. Python
-2. Python Flask
-3. SQLAlchemy
-4. Sqlite
-5. Yummly API
-6. JQuery/Javascript
-7. Twilio API
-8. Jinja2
-9. HTML/CSS/Bootstrap
 
 Installation
 -------
@@ -224,5 +212,16 @@ After you download the code, installation is straightforward.
 
         pip install -r requirements.txt
 
-And now you're ready to run!
+And now you're ready to run! The code is run with a shell script::
+
+     ./cookroulette.scr
+
+This script would nominally hold API keys for twilio and yummly in
+order to achieve full functionality of the site. These are omitted in
+this repository. The API keys can be acquired at
+[www.twilio.com](www.twilio.com) and
+[developers.yummly.com](developers.yummly.com) and then inserted into
+the cookroulette.scr script as environment variables that are then
+called in the server code.
+
 
