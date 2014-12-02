@@ -5,8 +5,8 @@ Cook Roulette: Data-driven meals
 
 Cook Roulette is a random meal generator that creates combinations of food so you don't have to think about what you should make for dinner.
 ####Table of Contents
-- [The Premise](#the-premise)
-- [k-means Clustering](#kmeans-clustering)
+- [The Premise](#the-premise-)
+- [k-means Clustering](#k-means-clustering)
 
 The premise 
 ----- 
