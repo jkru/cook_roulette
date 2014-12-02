@@ -83,6 +83,22 @@ Web App Features
 4. Uses Yummly API to find a recipe that uses those meal ingredients
 
 
+To Install
+-------
+After you download the code, installation is straightforward.
+
+1. Create a python virtual environment::
+
+        virtualenvironment env
+
+2. Activate the virtual environment::
+   	source env/bin/activate
+
+3. Install the requirements::
+   	pip install -r requirements.txt
+
+And now you're ready to run!
+
 Let's cook!
 -------------
 Cook Roulette randomly generates meal skeletons.
