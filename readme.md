@@ -155,7 +155,7 @@ unittest python library.
 
 To run the set of tests, simply run the run_tests script::
 
-   ./run_tests.scr
+          ./run_tests.scr
 
 ![unit tests]
 (https://raw.githubusercontent.com/jkru/cook_roulette/master/static/img/readme_img/runtest.png)
