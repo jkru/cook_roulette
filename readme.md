@@ -131,7 +131,20 @@ Extras
 -----------------------
 1. Text to twilio for a k-means generated meal
 
-2. Outward facing REST-ful API that provides a json object with a generated k-means meal
+2.  Cook Roulette provides an outward-facing, REST-ful API for
+    developers interested in implementing random meals into their
+    code. The API is available at localhost:5000/api. There are no limits on API calls. Each call returns a JSON object that is of the form:
+
+   {"meal": { 
+        "vegetable": "tomato", 
+        "protein": "bacon", 
+        "starch": "macaroni" 
+        } 
+   } 
+
+ where each "meal" skeleton consists of a vegetable, protein, and
+ starch and the ingredients are randomly populated from k-means
+ clustered ingredients.
 
 Technology stack
 ----
