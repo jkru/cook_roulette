@@ -214,7 +214,7 @@ After you download the code, installation is straightforward.
 
 4. And now you're ready to run! The code is run with a shell script::
 
-     ./cookroulette.scr
+        ./cookroulette.scr
 
 This script would nominally hold API keys for twilio and yummly in
 order to achieve full functionality of the site. These are omitted in
