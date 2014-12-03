@@ -113,7 +113,19 @@ def display_saved_recipes():
     """Shows the saved recipes"""
 
     list_of_recipes = model.get_list_saved_recipes(session['email'])
-    return render_template("saved_recipes.html", recipes=list_of_recipes)
+    saved_recipe_list = []
+    for recipe in list_of_recipes:
+        saved_meal = {}
+        saved_recipe = json.loads(recipe.recipe)
+
+        saved_meal[u'vegetable'] = saved_recipe[u'vegetable']
+        saved_meal[u'protein'] = saved_recipe[u'protein']
+        saved_meal[u'starch'] = saved_recipe[u'starch']
+
+        saved_recipe_list.append(saved_meal)
+
+    print saved_recipe_list
+    return render_template("saved_recipes.html", recipes=saved_recipe_list)
 
 
 

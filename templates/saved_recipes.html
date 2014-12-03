@@ -17,7 +17,7 @@
 
   .comfortaaa {
       font-family: 'Comfortaa', cursive;
-      font-size: 40px;
+      font-size: 50px;
       color: #fff;
   }
 
@@ -25,6 +25,12 @@
        font-family: 'Playfair Display', serif;
        font-size: 20px;
         color: #fff;
+  }
+
+  .playfairaa{
+       font-family: 'Playfair Display', serif;
+       font-size: 30px;
+       color: #fff;
   }
 
 </style>
@@ -39,10 +45,19 @@
 
 <div class="col-sm-8">
   <h3 class="comfortaaa">My Saved Meals</h3>
-<!--<button class="btn btn-default" id="hr">Human Readable</button>-->
-
+<div class="playfairaa"><strong>
+  <div class="col-sm-4">vegetable</div>
+  <div class="col-sm-4">protein</div>
+  <div class="col-sm-4">starch</div></strong>
+</div>
+<br>
+<br>
   {% for recipe in recipes %}
-     <div class="playfaira" id="savedmeals">{{recipe.recipe}}</div>
+    <div class="playfaira" id="savedmeals"> 
+       <div class="col-sm-4">{{recipe.vegetable}}</div>
+       <div class="col-sm-4">{{recipe.protein}}</div>
+       <div class="col-sm-4">{{recipe.starch}}</div>
+     </div>
   {% endfor %}
 </div>
 
