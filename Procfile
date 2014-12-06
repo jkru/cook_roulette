@@ -1,1 +1,1 @@
-web: ./runscript.scr
+web: python cookroulette.py
