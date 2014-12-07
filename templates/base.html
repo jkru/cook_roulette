@@ -1,5 +1,7 @@
 <html>
     <head>
+      <script type="text/javascript" src="/static/js/lightbox.js"></script>
+      <link rel="stylesheet" href="/static/css/lightbox.css" type="text/css" media="screen" />
 <link rel="shortcut icon" href="/static/img/103.png">
 <link href='http://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
       <link href='http://fonts.googleapis.com/css?family=Comfortaa:400,700' rel='stylesheet' type='text/css'>
@@ -15,6 +17,7 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
                             <li class="playfair"> <a href="/">Home</a></li>
+			    <li class="playfair" id="about"><a href="static/img/about.png" rel="lightbox"> About</a></li>
                             <li class="playfair"> <a href="/developers">Developers</a></li>
                             {% if "logged_in" in session %}
                                 <li class="playfair"> <a href="/account">Account</a></li> 
@@ -53,6 +56,7 @@
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="/static/dist/js/bootstrap.min.js"></script>
+
 
     </body>
 </html>
