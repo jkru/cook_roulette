@@ -35,7 +35,6 @@ Technology Stack
   - [Twilio Texts](#twilio-texts)
   - [Cook Roulette API](#cook-roulette-api)
 - [Installation](#installation)
-  - [Running Cook Roulette](#running-cook-roulette)
 
 ##The Premise 
 
