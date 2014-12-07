@@ -12,7 +12,9 @@ import requests
 
 
 app = Flask(__name__)
-app.secret_key = 'asdf'
+
+FLASK_SECRET_KEY = os.environ.get("FLASK_SECRET_KEY", "asdf") 
+app.secret_key = FLASK_SECRET_KEY
 
 TWILIO_ACCOUNT_SID=os.environ.get('TWILIO_ACCOUNT_SID')
 TWILIO_AUTH_TOKEN=os.environ.get('TWILIO_AUTH_TOKEN')
@@ -268,6 +270,6 @@ def developers():
 
 if __name__ == "__main__":
     print "INIT"
-    #app.run(debug=True)
-    app.run()
+    PORT = int(os.environ.get("PORT", 5000))
+    app.run(debug=False, host="0.0.0.0",port=PORT)
 
