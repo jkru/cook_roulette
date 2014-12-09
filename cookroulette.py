@@ -3,6 +3,7 @@ from flask import redirect, url_for, flash, session, jsonify
 from recipemachine import RecipeMachine
 from passlib.hash import sha256_crypt
 from twilio.rest import TwilioRestClient
+from viewdecorator import crossdomain
 import twilio.twiml
 import os
 import model
@@ -242,6 +243,7 @@ def hello_custom():
 
 
 @app.route('/api')
+@crossdomain(origin='*')
 def random_api():
     """ k-means meal to API
     
