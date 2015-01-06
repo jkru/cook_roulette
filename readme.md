@@ -1,6 +1,8 @@
 Cook Roulette: Data-driven meals
 =====================
-Cook Roulette is a random meal generator that creates combinations of food so you don't have to think about what you should make for dinner.
+[Cook Roulette] (https://cookroulette.herokuapp.com/) is a random meal generator that creates combinations of food so you don't have to think about what you should make for dinner.
+
+Cook Roulette was built by [Julie Hollek](https://www.linkedin.com/in/juliehollek), who is currently seeking employment in the Bay Area.
 
 ![home page]
 (https://raw.githubusercontent.com/jkru/cook_roulette/master/static/img/readme_img/homepage.png)
